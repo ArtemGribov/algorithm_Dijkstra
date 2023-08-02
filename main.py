@@ -26,7 +26,7 @@ graph["fin"] = {}
 
 
 #Таблица стоимостей
-infinity = float("inf")
+infinity = float("inf") #бесконечность
 costs = {}
 costs["a"] = 6
 costs["b"] = 2
@@ -37,3 +37,6 @@ parents = {}
 parents["a"] = "start"
 parents["b"] = "start"
 parents["in"] = None
+
+#Массив для отслеживания всех уже обработанных узлов
+processed = []
