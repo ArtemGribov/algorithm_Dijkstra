@@ -23,3 +23,17 @@ graph["b"] = {}
 graph["b"]["a"] = 3
 graph["b"]["fin"] = 5
 graph["fin"] = {}
+
+
+#Таблица стоимостей
+infinity = float("inf")
+costs = {}
+costs["a"] = 6
+costs["b"] = 2
+costs["fin"] = infinity
+
+#Таблица родителей
+parents = {}
+parents["a"] = "start"
+parents["b"] = "start"
+parents["in"] = None
