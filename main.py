@@ -2,8 +2,7 @@
 #Создаем граф
 graph = {}
 graph["start"] = {}
-graph["start"]["a"] = 2
-graph["start"]["b"] = 5
+graph["start"]["a"] = 10
 
 #Просмотр веса ребра по двум узлам
 #print(graph["start"]["a"])
@@ -14,19 +13,14 @@ graph["start"]["b"] = 5
 
 #Добавляем остальные узлы с соседями
 graph["a"] = {}
-graph["a"]["b"] = 8
-graph["a"]["c"] = 7
+graph["a"]["b"] = 20
 
 graph["b"] = {}
-graph["b"]["c"] = 2
-graph["b"]["d"] = 4
+graph["b"]["c"] = 1
+graph["b"]["fin"] = 30
 
 graph["c"] = {}
-graph["c"]["fin"] = 1
-
-graph["d"] = {}
-graph["d"]["c"] = 6
-graph["d"]["fin"] = 3
+graph["c"]["a"] = 1
 
 graph["fin"] = {}
 
@@ -36,23 +30,19 @@ print(graph.values())
 #Таблица стоимостей
 infinity = float("inf") #бесконечность
 costs = {}
-costs["a"] = 2
-costs["b"] = 5
+costs["a"] = 10
+costs["b"] = 30
 costs["c"] = infinity
-costs["d"] = infinity
 costs["fin"] = infinity
 
 #Таблица родителей
 parents = {}
 parents["a"] = "start"
-parents["b"] = "start"
+parents["a"] = "c"
 parents["b"] = "a"
 parents["c"] = "a"
 parents["c"] = "b"
-parents["c"] = "d"
-parents["d"] = "b"
-parents["fin"] = "c"
-parents["fin"] = "d"
+parents["fin"] = "b"
 parents["in"] = None
 
 #Массив для отслеживания всех уже обработанных узлов
