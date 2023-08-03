@@ -1,11 +1,9 @@
 #175
 #Создаем граф
 graph = {}
-#Добавляем узел "start"
 graph["start"] = {}
-#Добавляем соседние узлы с весами
-graph["start"]["a"] = 6
-graph["start"]["b"] = 2
+graph["start"]["a"] = 2
+graph["start"]["b"] = 5
 
 #Просмотр веса ребра по двум узлам
 #print(graph["start"]["a"])
@@ -16,23 +14,42 @@ graph["start"]["b"] = 2
 
 #Добавляем остальные узлы с соседями
 graph["a"] = {}
-graph["a"]["fin"] = 1
+graph["a"]["b"] = 8
+graph["a"]["c"] = 7
+
 graph["b"] = {}
-graph["b"]["a"] = 3
-graph["b"]["fin"] = 5
+graph["b"]["c"] = 2
+graph["b"]["d"] = 4
+
+graph["c"] = {}
+graph["c"]["fin"] = 1
+
+graph["d"] = {}
+graph["d"]["c"] = 6
+graph["d"]["fin"] = 3
+
 graph["fin"] = {}
 
 #Таблица стоимостей
 infinity = float("inf") #бесконечность
 costs = {}
-costs["a"] = 6
-costs["b"] = 2
+costs["a"] = 2
+costs["b"] = 5
+costs["c"] = infinity
+costs["d"] = infinity
 costs["fin"] = infinity
 
 #Таблица родителей
 parents = {}
 parents["a"] = "start"
 parents["b"] = "start"
+parents["b"] = "a"
+parents["c"] = "a"
+parents["c"] = "b"
+parents["c"] = "d"
+parents["d"] = "b"
+parents["fin"] = "c"
+parents["fin"] = "d"
 parents["in"] = None
 
 #Массив для отслеживания всех уже обработанных узлов
@@ -62,4 +79,4 @@ while node is not None:
     node = find_lowest_cost_node(costs)
 
 #Проверка
-print(costs)
+print("Кратчайший путь до fin: ", costs.get("fin"))
