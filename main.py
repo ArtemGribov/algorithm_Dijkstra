@@ -1,4 +1,4 @@
-#175
+#181
 #Создаем граф
 graph = {}
 graph["start"] = {}
@@ -29,6 +29,9 @@ graph["d"]["c"] = 6
 graph["d"]["fin"] = 3
 
 graph["fin"] = {}
+
+print(graph.keys())
+print(graph.values())
 
 #Таблица стоимостей
 infinity = float("inf") #бесконечность
